@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "clinic-client"
+  "defaultProject": "clinic-client",
+  "cli": {
+    "analytics": false
+  }
 }
