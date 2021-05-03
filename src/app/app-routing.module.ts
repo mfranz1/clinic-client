@@ -5,6 +5,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { PracticionerDashboardComponent } from './pages/practicioner-dashboard/practicioner-dashboard.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
+import { PatientListComponent } from './pages/patient/patient-list/patient-list.component';
+import { AdminAddComponent } from './pages/admin/admin-add/admin-add.component';
+import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.component';
 
 const routes: Routes = [
   {
@@ -20,15 +23,23 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'patient/dashboard',
-    component: PatientDashboardComponent
+    path: 'patient',
+    component: PatientDashboardComponent,
+    children: [
+      {path: 'dashboard', component: PatientHomeComponent}
+    ]
   },
   {
-    path: 'admin/dashboard',
-    component: AdminDashboardComponent
+    path: 'admin',
+    component: AdminDashboardComponent,
+    children: [
+      { path: 'dashboard', component: PracticionerDashboardComponent },
+      { path: 'patient-list', component: PatientListComponent },
+      { path: 'admin-add', component: AdminAddComponent }
+    ]
   },
   {
-    path: 'practicioner/dashboard',
+    path: 'practitioner',
     component: PracticionerDashboardComponent
   }
 ];

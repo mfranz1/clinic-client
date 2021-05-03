@@ -1,1 +1,51 @@
-<p>admin-dashboard works!</p>
+<mat-toolbar color='primary'>
+    <mat-toolbar-row>
+        <span>AMS</span>
+        <div fxFlex fxLayout='row' fxLayoutAlign='flex-end'>
+            <ul fxLayout='row' fxLayoutGap='20px'>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]='menu'>
+                        <mat-icon>person</mat-icon>
+                        <mat-menu #menu='matMenu'>
+                            <button mat-menu-item routerLink='/login'>
+                                <mat-icon>exit_to_app</mat-icon>
+                                Sign Out
+                            </button>
+                        </mat-menu>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container>
+    <mat-drawer mode='side' opened>
+        <mat-nav-list>
+            <div class="profile-pic">
+                <div class="header">
+                    <h2>Brian Knauff</h2>
+                    <h4>Admin</h4>
+                </div>
+                <img src="https://img-comment-fun.9cache.com/media/arGxZDX/a3MzPwmn_700w_0.jpg" alt="">
+            </div>
+            <mat-divider></mat-divider>
+
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">Dashboard</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="admin-add">Admins</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="">Doctors</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="">Nurses</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-list">Patients</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/test">Appointments</a>
+
+            <mat-divider></mat-divider>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
