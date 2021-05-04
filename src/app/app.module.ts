@@ -42,6 +42,7 @@ import { PractitionerHomepageComponent } from './pages/practitioner/practitioner
 import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.component';
 import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { ClockComponent } from './pages/components/clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.componen
     DoctorAddComponent,
     NurseAddComponent,
     AdminHomeComponent,
+    ClockComponent,
   ],
   imports: [
     BrowserModule,

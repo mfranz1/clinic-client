@@ -15,6 +15,7 @@ import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.c
 import { NurseListComponent } from './pages/practitioner/nurse-list/nurse-list.component';
 import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { PractitionerHomepageComponent } from './pages/practitioner/practitioner-homepage/practitioner-homepage.component';
 
 const routes: Routes = [
   {
@@ -53,7 +54,10 @@ const routes: Routes = [
   },
   {
     path: 'practitioner',
-    component: PracticionerDashboardComponent
+    component: PracticionerDashboardComponent,
+    children: [
+      {path: '', component: PractitionerHomepageComponent}
+    ]
   }
 ];
 
