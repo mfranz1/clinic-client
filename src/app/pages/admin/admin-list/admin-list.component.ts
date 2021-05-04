@@ -18,4 +18,9 @@ export class AdminListComponent implements OnInit {
     this.adminService.readAdmin().subscribe((res) => {this.adminList = res});
   }
 
+  deleteAdmin(id){
+    this.adminService.deleteAdmin(id).subscribe((res) => {console.log(res)}
+    );
+  }
+
 }

@@ -16,8 +16,12 @@ export class AdminService {
     return this.http.get<Admin[]>(`${this.API_SERVER}/admins`);
   }
 
-  newAdmin(admin: Admin){
-    return this.http.post<Admin>(`${this.API_SERVER}/admins`, admin);
+  createAdmin(admin: Admin){
+    return this.http.post<Admin[]>(`${this.API_SERVER}/admins`, admin);
+  }
+
+  deleteAdmin(id: number){
+    return this.http.delete(`${this.API_SERVER}/admins:${id}`);
   }
 
 
