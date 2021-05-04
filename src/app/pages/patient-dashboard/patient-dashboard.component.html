@@ -34,14 +34,20 @@
                 <img src="https://img-comment-fun.9cache.com/media/arGxZDX/a3MzPwmn_700w_0.jpg" alt="">
             </div>
             <mat-divider></mat-divider>
-
-            <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">Dashboard</a>
-            <a mat-list-item routerLinkActive="list-item-active" routerLink="test">Appointments</a>
-
-            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Vitals Overview</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    Height: 6'2"
+                </mat-card-content>
+                <mat-card-content>
+                    Weight: 175 lbs
+                </mat-card-content>
+            </mat-card>
         </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-        <router-outlet></router-outlet>
+        <app-patient-home></app-patient-home>
     </mat-drawer-content>
 </mat-drawer-container>

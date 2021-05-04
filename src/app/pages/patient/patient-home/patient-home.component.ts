@@ -7,6 +7,10 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
+  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
+  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
+  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
+  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
   {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'}
 ];
 
@@ -19,9 +23,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class PatientHomeComponent implements OnInit {
+  selectedDate: any;
+  onSelect(event){
+    console.log(event);
+    this.selectedDate= event;
+  }
 
   displayedColumns: string[] = ['date', 'time', 'doctor'];
-  dataSource = ELEMENT_DATA;
+  patientAppointment = ELEMENT_DATA;
 
   constructor() { }
 

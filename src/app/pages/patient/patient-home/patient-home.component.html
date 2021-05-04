@@ -1,40 +1,56 @@
-<h1>Dashboard</h1>
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stat-cards">
-    <mat-card fxFlex="30" class="card">
-        <mat-card-header>
-            <mat-card-title>Overview</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            Card Content HERE
-        </mat-card-content>
-    </mat-card>
-    <mat-card fxFlex="70" class="card">
-        <mat-card-header>
-            <mat-card-title>Upcoming Appointment</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div fxLayout='row'>
+    <div fxlayout='column-reverse' fxFlex='50'>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Upcoming Appointment</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]='patientAppointment' class="mat-elevation-z8">
 
-                <ng-container matColumnDef="date">
-                    <th mat-header-cell *matHeaderCellDef> Date </th>
-                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-                </ng-container>
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
 
-                
-                <ng-container matColumnDef="time">
-                    <th mat-header-cell *matHeaderCellDef> Time </th>
-                    <td mat-cell *matCellDef="let element"> {{element.time}} </td>
-                </ng-container>
 
-                
-                <ng-container matColumnDef="doctor">
-                    <th mat-header-cell *matHeaderCellDef> Doctor </th>
-                    <td mat-cell *matCellDef="let element"> {{element.doctor}} </td>
-                </ng-container>
+                    <ng-container matColumnDef="time">
+                        <th mat-header-cell *matHeaderCellDef> Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                    </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-        </mat-card-content>
-    </mat-card>
+
+                    <ng-container matColumnDef="doctor">
+                        <th mat-header-cell *matHeaderCellDef> Doctor </th>
+                        <td mat-cell *matCellDef="let element"> {{element.doctor}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Create Appointment
+                </mat-card-title>
+            </mat-card-header>
+            <form #appointment = 'ngForm'>
+                <mat-form-field>
+                    <mat-label>Pick a Time</mat-label>
+                    <input matInput name = 'time' required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Doctor</mat-label>
+                    <input matInput name='doctor' required>
+                </mat-form-field>
+                <button mat-raised-button  color='primary'>Confirm</button>
+            </form>
+        </mat-card>
+    </div>
+    <div fxFlex='50'>
+        <mat-card>
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+    </div>
 </div>

@@ -1,14 +1,14 @@
-.stat-cards{
-    .card{
-        overflow: hidden;      
-    }
-}
-
 mat-card-header{
     background-color: aqua;
-    padding: 5px;
+    padding-top: 10px;
 }
 
 table{
     width: 100%;
+}
+button{
+    margin-left: 30%;
+}
+mat-form-field{
+    margin-left: 10px;
 }
