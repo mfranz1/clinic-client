@@ -35,6 +35,11 @@ import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.
 import { AdminListComponent } from './pages/admin/admin-list/admin-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DoctorListComponent } from './pages/practitioner/doctor-list/doctor-list.component';
+import { NurseListComponent } from './pages/practitioner/nurse-list/nurse-list.component';
+import { PractitionerHomepageComponent } from './pages/practitioner/practitioner-homepage/practitioner-homepage.component';
+import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.component';
+import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,11 @@ import { FormsModule } from '@angular/forms';
     PatientAddComponent,
     PatientHomeComponent,
     AdminListComponent,
+    DoctorListComponent,
+    NurseListComponent,
+    PractitionerHomepageComponent,
+    DoctorAddComponent,
+    NurseAddComponent,
   ],
   imports: [
     BrowserModule,

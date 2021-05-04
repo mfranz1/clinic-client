@@ -29,7 +29,7 @@ export class PatientHomeComponent implements OnInit {
     this.selectedDate= event;
   }
 
-  displayedColumns: string[] = ['date', 'time', 'doctor'];
+  displayedColumns: string[] = ['date', 'time', 'doctor', 'action'];
   patientAppointment = ELEMENT_DATA;
 
   constructor() { }
