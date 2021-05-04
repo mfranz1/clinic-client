@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
 import { HeaderComponent } from './pages/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './pages/login/login.component';
 
 //Angular Material
 import { MatDividerModule } from '@angular/material/divider';
@@ -49,6 +50,7 @@ import { FormsModule } from '@angular/forms';
     PatientAddComponent,
     PatientHomeComponent,
     AdminListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
