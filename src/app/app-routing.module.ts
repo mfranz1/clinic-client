@@ -14,6 +14,7 @@ import { DoctorListComponent } from './pages/practitioner/doctor-list/doctor-lis
 import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.component';
 import { NurseListComponent } from './pages/practitioner/nurse-list/nurse-list.component';
 import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 
 const routes: Routes = [
   {
@@ -31,15 +32,12 @@ const routes: Routes = [
   {
     path: 'patient',
     component: PatientDashboardComponent,
-    children: [
-      {path: 'dashboard', component: PatientHomeComponent}
-    ]
   },
   {
     path: 'admin',
     component: AdminDashboardComponent,
     children: [
-      { path: 'dashboard', component: PracticionerDashboardComponent },
+      { path: 'dashboard', component: AdminHomeComponent },
       { path: 'admin-list', component: AdminListComponent },
       { path: 'admin-add', component: AdminAddComponent },
       { path: 'patient-list', component: PatientListComponent},

@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //Angular Flex-Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -40,6 +41,7 @@ import { NurseListComponent } from './pages/practitioner/nurse-list/nurse-list.c
 import { PractitionerHomepageComponent } from './pages/practitioner/practitioner-homepage/practitioner-homepage.component';
 import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.component';
 import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.comp
     PractitionerHomepageComponent,
     DoctorAddComponent,
     NurseAddComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.comp
     MatNativeDateModule,
     MatSelectModule,
     MatCardModule,
+    MatGridListModule,
     FlexLayoutModule,
     HttpClientModule,
     FormsModule
