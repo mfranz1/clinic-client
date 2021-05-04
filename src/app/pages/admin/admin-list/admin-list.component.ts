@@ -9,7 +9,7 @@ import { AdminService } from '../../../services/admin.service';
 export class AdminListComponent implements OnInit {
 
   //id, email, password, adminPin, fName, lName
-  displayedColumns: string[] = ['fName', 'lName', 'email', 'adminPin', 'password', 'edit', 'delete'];
+  displayedColumns: string[] = ['_id', 'fName', 'lName', 'email', 'adminPin', 'password', 'edit', 'delete'];
   adminList = [];
   
 

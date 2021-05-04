@@ -3,6 +3,11 @@
 
     <table mat-table [dataSource]="doctorList" class="mat-elevation-z8">
 
+        <ng-container matColumnDef="_id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="fName">
             <th mat-header-cell *matHeaderCellDef> First </th>
             <td mat-cell *matCellDef="let element"> {{element.fName}} </td>

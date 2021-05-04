@@ -8,7 +8,7 @@ import { PractitionerService } from '../../../services/practitioner.service'
 })
 export class DoctorListComponent implements OnInit {
 
-  displayedColumns: string[] = ['fName', 'lName', 'email', 'title', 'pagingNum', 'edit', 'delete'];
+  displayedColumns: string[] = ['_id', 'fName', 'lName', 'email', 'title', 'pagingNum', 'edit', 'delete'];
   doctorList = [];
 
   constructor(private doctorService: PractitionerService) { }

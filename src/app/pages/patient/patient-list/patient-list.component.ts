@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/services/patient.service';
+import { Patients } from 'src/app/models/patients';
 
 @Component({
   selector: 'app-patient-list',
@@ -8,7 +9,7 @@ import { PatientService } from 'src/app/services/patient.service';
 })
 export class PatientListComponent implements OnInit {
 
-  displayedColumns: string[] = ['fName', 'middleInitial', 
+  displayedColumns: string[] = ['_id', 'fName', 'middleInitial', 
   'lName', 'email', 'password', 'dob', 'address', 'primaryPhone', 
   'secondaryPhone', 'gender', 'ssn', 'emergencyContact', 'insurance', 'edit', 'delete'];
   patientList = [];
