@@ -1,3 +1,66 @@
+<mat-grid-list cols='4' rowheight='100px'>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+        <mat-card class="c-1">
+            <mat-card-header>
+                <mat-card-title>Upcoming Appointments</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]='appointments' class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="time">
+                        <th mat-header-cell *matHeaderCellDef> Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="doctorID">
+                        <th mat-header-cell *matHeaderCellDef> Doctor </th>
+                        <td mat-cell *matCellDef="let element"> {{element.doctorID}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cancel">
+                        <th mat-header-cell *matHeaderCellDef> Cancel Appointment </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-raised-button color='warn'>cancel</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+        <mat-card class="c-2">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+        <mat-card class="c-3">
+            <mat-card-header>
+                <mat-card-title>Register for Appointment</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+        <mat-card class="c-4">
+            <mat-card-header>
+                <mat-card-title>Notes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                Notes suppose to go in here
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<!--
 <div fxLayout='row'>
     <div fxlayout='column-reverse' fxFlex='50'>
         <mat-card>
@@ -61,3 +124,4 @@
         </mat-card>
     </div>
 </div>
+-->

@@ -32,6 +32,9 @@ const routes: Routes = [
   {
     path: 'patient',
     component: PatientDashboardComponent,
+    children: [
+      {path: '', component: PatientHomeComponent}
+    ]
   },
   {
     path: 'admin',
