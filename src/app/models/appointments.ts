@@ -1,12 +1,11 @@
 export interface Appointments {
-    id: object;
-    patiendID: object;
-    doctorID: object;
-    date: Date;
-    time: string;
-    type: string;
-    notes: object;
-    appointmentConfirmed: Boolean;
-    archive: String;
+   patientID: string;
+   doctorId: string;
+   date: Date;
+   time: string;
+   type: string;
+   notes: string;
+   appointmentConfirmed: Boolean;
+   archive: string;
 
 }

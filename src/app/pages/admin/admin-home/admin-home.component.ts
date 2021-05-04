@@ -1,18 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  date: string;
-  time: string;
-  doctor: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
-  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
-  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
-  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'},
-  {date: '5/16/2021', time: '4:00', doctor: 'Doctor Doc'}
-];
+import { AppointmentsService } from 'src/app/services/appointments.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -27,12 +14,13 @@ export class AdminHomeComponent implements OnInit {
     this.selectedDate = event;
   }
 
-  displayedColumns: string[] = ['date', 'time', 'doctor', 'note', 'action'];
-  appointments = ELEMENT_DATA;
+  displayedColumns: string[] = ['date', 'time', 'doctorID', 'note', 'action'];
+  appointments = [];
 
-  constructor() { }
+  constructor(private appointmentService: AppointmentsService) { }
 
   ngOnInit(): void {
+    this.appointmentService.readAppointments().subscribe((res) => {this.appointments = res});
   }
 
 }
