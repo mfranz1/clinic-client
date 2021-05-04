@@ -1,11 +1,11 @@
 <mat-grid-list cols='4' rowheight='100px'>
-    <mat-grid-tile [colspan]=2 [rowspan]=1>
+    <mat-grid-tile [colspan]=3 [rowspan]=1>
         <mat-card class="c-1">
             <mat-card-header>
                 <mat-card-title>Upcoming Appointments</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <table mat-table [dataSource]='appointments' class="mat-elevation-z8">
+                <table mat-table [dataSource]='patientAppointments' class="mat-elevation-z8">
 
                     <ng-container matColumnDef="date">
                         <th mat-header-cell *matHeaderCellDef> Date </th>
@@ -37,7 +37,7 @@
             </mat-card-content>
         </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]=2 [rowspan]=1>
+    <mat-grid-tile [colspan]=1 [rowspan]=1>
         <mat-card class="c-2">
             <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
@@ -47,6 +47,31 @@
             <mat-card-header>
                 <mat-card-title>Register for Appointment</mat-card-title>
             </mat-card-header>
+            <form action="" fxLayout="row" fxLayoutAlign="space-evenly center">
+                <div>
+                <mat-form-field apperance='outline'>
+                    <mat-label>Date</mat-label>
+                    <input matInput name="date" required>
+                </mat-form-field>
+                <mat-form-field apperance='outline'>
+                    <mat-label>Time</mat-label>
+                    <input matInput name="time" required>
+                </mat-form-field>
+                </div>
+                <div>
+                <mat-form-field apperance='outline'>
+                    <mat-label>Type</mat-label>
+                    <input matInput name="type" required>
+                </mat-form-field>
+                <mat-form-field apperance='outline'>
+                    <mat-label>Doctor</mat-label>
+                    <input matInput name="doctor" required>
+                </mat-form-field>
+                </div>
+                <mat-card-actions>
+                    <button mat-raised-button color='primary'>Submit</button>
+                </mat-card-actions>
+            </form>
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]=2 [rowspan]=1>
