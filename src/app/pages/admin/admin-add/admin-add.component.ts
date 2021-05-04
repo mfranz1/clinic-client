@@ -11,8 +11,8 @@ export class AdminAddComponent implements OnInit {
 
   constructor(private adminService: AdminService) { }
 
-  createAdmin(admin: Admin){
-    this.adminService.createAdmin(admin).subscribe((res) => { console.log(res)});
+  createAdmin(admin: Admin) {
+    this.adminService.createAdmin(admin).subscribe((res) => { console.log(res) });
   }
   ngOnInit(): void {
   }

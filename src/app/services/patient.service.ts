@@ -18,4 +18,12 @@ export class PatientService {
   createPatient(patient: Patients){
     return this.http.post<Patients>(`${this.API_SERVER}/patients`, patient);
   }
+
+  deletePatient(id: string){
+      return this.http.delete(`${this.API_SERVER}/patients:${id}`);
+  }
+
+  updatePatient(id: string){
+    return this.http.put<Patients>(`${this.API_SERVER}/admin`, id);
+  }
 }

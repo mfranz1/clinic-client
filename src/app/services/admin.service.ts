@@ -20,8 +20,12 @@ export class AdminService {
     return this.http.post<Admin[]>(`${this.API_SERVER}/admins`, admin);
   }
 
-  deleteAdmin(id: number){
+  deleteAdmin(id: string){
     return this.http.delete(`${this.API_SERVER}/admins:${id}`);
+  }
+
+  updateAdmin(id: string){
+    return this.http.put<Admin>(`${this.API_SERVER}/admin`, id);
   }
 
 

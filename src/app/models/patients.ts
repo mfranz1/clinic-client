@@ -1,33 +1,33 @@
 export interface Patients {
-    email: String;
-    password: String;
-    fName: String;
-    middleInitial: String;
-    lName: String;
-    dob: String;
+    email: string;
+    password: string;
+    fName: string;
+    middleInitial: string;
+    lName: string;
+    dob: string;
     address: {
-        street: String,
-        city: String,
-        state: String,
-        zipcode: Number,
+        street: string,
+        city: string,
+        state: string,
+        zipcode: number,
     };
-    primaryPhone: Number;
-    secondaryPhone: Number;
-    gender: String;
-    ssn: Number;
+    primaryPhone: number;
+    secondaryPhone: number;
+    gender: string;
+    ssn: number;
     emergencyContact: {
-        fName: String,
-        lName: String,
-        phone: Number
+        fName: string,
+        lName: string,
+        phone: number
     };
     insurance: {
-        policyNumber: Number,
-        groupNumber: Number,
+        policyNumber: number,
+        groupNumber: number,
         policyHolder: {
-            fName: String,
-            lName: String,
-            ssn: Number,
-            dob: String
+            fName: string,
+            lName: string,
+            ssn: number,
+            dob: string
         }
     }
 }
