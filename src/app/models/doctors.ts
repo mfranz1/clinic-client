@@ -4,6 +4,6 @@ export interface Doctors{
     fName: string;
     lName: string;
     title: string;
-    pagingNum: string;
-    patientContactNum: string;
+    pagingNum: number;
+    patientContactNum: number;
 }

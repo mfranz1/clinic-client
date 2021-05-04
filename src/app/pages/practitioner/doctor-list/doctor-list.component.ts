@@ -14,8 +14,7 @@ export class DoctorListComponent implements OnInit {
   constructor(private doctorService: PractitionerService) { }
 
   ngOnInit(): void {
-    this.doctorService.readDoctor().subscribe((res) => {console.log(res)}
-    );
+    this.doctorService.readDoctor().subscribe((res) => {this.doctorList = res});
   }
 
 }
