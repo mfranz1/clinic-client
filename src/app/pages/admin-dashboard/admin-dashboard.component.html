@@ -34,16 +34,43 @@
                 <img src="https://img-comment-fun.9cache.com/media/arGxZDX/a3MzPwmn_700w_0.jpg" alt="">
             </div>
             <mat-divider></mat-divider>
+            <a class="dashboard-link" mat-list-item routerLinkActive="list-item-active"
+                routerLink="dashboard">Dashboard</a>
+        </mat-nav-list>
 
+        <mat-list>
+            <mat-list-item>Patienet Management</mat-list-item>
+            <div>
+                <button mat-raised-button fxFill color='primary' routerLink='patient-create'>Create Patient</button>
+                <button mat-raised-button fxFill color='primary' routerLink='patient-list'>Modify Patient</button>
+            </div>
+            <mat-list-item>Doctor Management</mat-list-item>
+            <div>
+                <button mat-raised-button fxFill color='primary' routerLink='doctor-create'>Create Doctor</button>
+                <button mat-raised-button fxFill color='primary' routerLink='doctor-list'>Modify Doctor</button>
+            </div>
+            <mat-list-item>Nurse Management</mat-list-item>
+            <div>
+                <button mat-raised-button fxFill color='primary' routerLink='nurse-create'>Create Nurse</button>
+                <button mat-raised-button fxFill color='primary' routerLink='nurse-list'>Modify Nurse</button>
+            </div>
+            <mat-list-item>Admin Management</mat-list-item>
+            <div>
+                <button mat-raised-button fxFill color='primary' routerLink='admin-add'>Create Admin</button>
+                <button mat-raised-button fxFill color='primary' routerLink='admin-list'>Modify Admin</button>
+            </div>
+        </mat-list>
+
+        <!--
             <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">Dashboard</a>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="admin-list">Admins</a>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="admin-add">Doctors</a>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="">Nurses</a>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-list">Patients</a>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="test">Appointments</a>
+            -->
+        <mat-divider></mat-divider>
 
-            <mat-divider></mat-divider>
-        </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
         <router-outlet></router-outlet>
