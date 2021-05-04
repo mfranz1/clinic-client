@@ -8,6 +8,7 @@ import { PatientDashboardComponent } from './pages/patient-dashboard/patient-das
 import { PatientListComponent } from './pages/patient/patient-list/patient-list.component';
 import { AdminAddComponent } from './pages/admin/admin-add/admin-add.component';
 import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.component';
+import { AdminListComponent } from './pages/admin/admin-list/admin-list.component';
 
 const routes: Routes = [
   {
@@ -34,8 +35,9 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       { path: 'dashboard', component: PracticionerDashboardComponent },
-      { path: 'patient-list', component: PatientListComponent },
-      { path: 'admin-add', component: AdminAddComponent }
+      { path: 'admin-list', component: AdminListComponent },
+      { path: 'admin-add', component: AdminAddComponent },
+      { path: 'patient-list', component: PatientListComponent}
     ]
   },
   {

@@ -32,6 +32,9 @@ import { PatientListComponent } from './pages/patient/patient-list/patient-list.
 import { AdminAddComponent } from './pages/admin/admin-add/admin-add.component';
 import { PatientAddComponent } from './pages/patient/patient-add/patient-add.component';
 import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.component';
+import { AdminListComponent } from './pages/admin/admin-list/admin-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.
     PatientListComponent,
     AdminAddComponent,
     PatientAddComponent,
-    PatientHomeComponent
+    PatientHomeComponent,
+    AdminListComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,9 @@ import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.
     MatNativeDateModule,
     MatSelectModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
