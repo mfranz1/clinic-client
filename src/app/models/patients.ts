@@ -1,34 +1,34 @@
-export interface Patients{
-    id: object;
-    fName: string;
+export interface Patients {
+    id: string;
     email: string;
     password: string;
+    fName: string;
     middleInitial: string;
     lName: string;
     dob: string;
     address: {
-        city: string;
-        state: string;
-        street: string;
-        zipcode: number;
-    }
+        street: string,
+        city: string,
+        state: string,
+        zipcode: number,
+    };
     primaryPhone: number;
     secondaryPhone: number;
     gender: string;
     ssn: number;
     emergencyContact: {
-        fName: string;
-        lName: string;
-        phone: number;
-    }
+        fName: string,
+        lName: string,
+        phone: number
+    };
     insurance: {
-        policyNumber: number;
-        groupNumber: number;
+        policyNumber: number,
+        groupNumber: number,
         policyHolder: {
-            fName: string;
-            lName: string;
-            ssn: number;
-            dob: string;
+            fName: string,
+            lName: string,
+            ssn: number,
+            dob: string
         }
     }
 }

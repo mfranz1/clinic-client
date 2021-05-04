@@ -1,7 +1,8 @@
 export interface Admin{
-    email: String;
-    password: String;
+    id: string;
+    email: string;
+    password: string;
     adminPin: Number;
-    fName: String;
-    lName: String;
+    fName: string;
+    lName: string;
 }

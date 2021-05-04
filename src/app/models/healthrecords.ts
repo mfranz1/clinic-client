@@ -1,7 +1,7 @@
 export interface HealthRecords{
-    patientID: Object;
+    patientID: string;
     primaryDopctor: string
-    appointments: Object;
-    vitals: Object;
-    notes: Object;
+    appointments: string;
+    vitals: string;
+    notes: string;
 }

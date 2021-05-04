@@ -1,5 +1,5 @@
 export interface Notes{
-    id: object;
+    id: string;
     noteAuthor: object;
     note: string;
     timeStamp: {

@@ -1,10 +1,10 @@
 export interface Doctors{
-    id: object;
+    id: string;
     email: string;
     password: string;
     fName: string;
     lName: string;
     title: string;
-    pagingNum: string;
-    patientContactNum: string;
+    pagingNum: number;
+    patientContactNum: number;
 }

@@ -9,8 +9,9 @@ import { AdminService } from '../../../services/admin.service';
 export class AdminListComponent implements OnInit {
 
   //id, email, password, adminPin, fName, lName
-  displayedColumns: string[] = ['fName', 'lName', 'email', 'edit', 'delete'];
+  displayedColumns: string[] = ['_id', 'fName', 'lName', 'email', 'adminPin', 'password', 'edit', 'delete'];
   adminList = [];
+  
 
   constructor(private adminService: AdminService) { }
 
@@ -18,9 +19,15 @@ export class AdminListComponent implements OnInit {
     this.adminService.readAdmin().subscribe((res) => {this.adminList = res});
   }
 
-  deleteAdmin(id){
-    this.adminService.deleteAdmin(id).subscribe((res) => {console.log(res)}
-    );
+  deleteAdmin(_id){
+    this.adminService.deleteAdmin(_id).subscribe((res) => {console.log(res)});
   }
+/*
+  updateAdmin(addAdmin){
+    addAdmin.value.id = this.admin['id'];
+    this.adminService.updateAdmin(addAdmin.value).subscribe((res) => {console.log(res);
+    });
+  }
+*/
 
 }

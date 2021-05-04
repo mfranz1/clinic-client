@@ -1,5 +1,5 @@
 export interface Nurses{
-    id: object;
+    id: string;
     fName: string;
     lName: string;
     title: string;
