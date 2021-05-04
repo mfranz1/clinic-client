@@ -32,3 +32,13 @@ mat-drawer-content{
 mat-toolbar{
     flex: auto;
 }
+.dashboard-link{
+    background-color: lightblue;
+}
+mat-list{
+    div{
+        button{
+            margin-bottom: 3px; 
+        }
+    }
+}

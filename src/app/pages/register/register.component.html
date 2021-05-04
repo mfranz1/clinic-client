@@ -1,1 +1,114 @@
-<p>register works!</p>
+<div class="secondaryBG">
+    <div style="color: #6AA8EC;font-family: Arial, Helvetica, sans-serif;font-size: 20pt; font-weight: bold; padding: 0.5em 0.5em;border-radius: 25px;">Doctor Office Patient System</div>
+    <div style="background-color: #6AA8EC; padding: 0.5em;border-radius: 2px;">
+        <p style="text-align: center;color: white;font-family: Arial, Helvetica, sans-serif;font-size: 16pt;">New Patient Registration Form</p>
+    </div>
+
+    <form name="regForm" class="div-centerAlt">
+        <div style="margin-bottom: 20px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="firstname" required name="firstname" value="Patient First Name" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 100px;" id="middleinital" required name="middleinital" value="Middle Initial" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px;" id="lastname" required name="lastname" value="Patient Last Name" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-bottom: 20px;text-align: left;">
+            <input type="date" class="textfield" style="width: 200px;" id="dob" required name="dob" value="Patient Date of Birth" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 190px;" id="ssn" required name="ssn" value="Patient SSN" onfocus="this.value=''"/>
+            <!--<input type="text" class="textfield" style="width: 100px;" id="gender" required name="gender" value="Gender" onfocus="this.value=''"/>-->
+            <span class="bluetext">Select a gender:  </span><input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><br>
+        </div>
+        <div style="margin-bottom: 20px;text-align: left">
+            <input type="text" class="textfield" style="width: 225px;" id="street" required name="street" value="Street Address" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 167px;" id="city" required name="city" value="City" onfocus="this.value=''"/>
+            <!--<input type="text" class="textfield" style="width: 150px;" id="state" required name="state" value="State" onfocus="this.value=''"/>-->
+            <span class="bluetext">Select a state:  </span>
+            <select id="state" name="state">
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AR">AR</option>	
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>	
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>	
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>	
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>			
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>	
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+            </select><br/>
+            <input type="text" class="textfield" style="width: 100px;margin-top: 15px;" id="zipcode" required name="zipcode" value="Zipcode" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-top: 35px; margin-bottom: 20px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="phone1" required name="phone1" value="Primary Contact Number" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px;" id="phone2" required name="phone2" value="Secondary Contact Number" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-bottom: 20px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="emfirstname" required name="emfirstname" value="Emergency Contact First Name" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px;" id="emlastname" required name="emlastname" value="Emergency Contact Last Name" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px; margin-top: 15px;" id="emphone" required name="emphone" value="Emergency Contact Phone" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-top: 35px;margin-bottom: 20px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="insurancecompany" required name="insurancecompany" value="Insurance Company Name" onfocus="this.value=''"/><br/>
+            <input type="text" class="textfield" style="width: 250px;" id="policynumber" required name="policynumber" value="Policy Number" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px; margin-top: 15px;" id="groupnumber" required name="groupnumber" value="Group Number" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-bottom: 20px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="phfirstname" required name="phfirstname" value="Policyholder First Name" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px;" id="phlastname" required name="phlastname" value="Policyholder Last Name" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px; margin-top: 15px;" id="phssn" required name="phssn" value="Policyholder SSN" onfocus="this.value=''"/>
+        </div>
+        <div style="margin-top: 30px;margin-bottom: 0px;text-align: left;">
+            <input type="text" class="textfield" style="width: 250px;" id="emailaddress" required name="emailaddress" value="Email Address" onfocus="this.value=''"/>
+            <input type="text" class="textfield" style="width: 250px;" id="password" required name="password" value="Password" onfocus="this.value=''"/>
+        </div>      
+        <!--<div [hidden]="(emailAddress.valid) || (emailAddress.invalid && emailAddress.untouched)" class="alert alert-danger">
+            Email Address is required
+        </div>-->
+       <!-- <div [hidden]="(password.valid) || (password.invalid && password.untouched)" class="alert alert-danger">
+            Password is required
+        </div>-->
+        <br/><br/>
+        <button type="button" class="button" style="margin-right: 20px;border:0;">Cancel</button>
+        <button type="submit" class="button" style="border:0;">Register</button><br/><br/>
+    </form>    
+
+</div>

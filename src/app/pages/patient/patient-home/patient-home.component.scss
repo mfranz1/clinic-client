@@ -1,14 +1,23 @@
-.stat-cards{
-    .card{
-        overflow: hidden;      
-    }
+mat-grid-tile{
+    background-color: lightcyan;
 }
-
-mat-card-header{
-    background-color: aqua;
-    padding: 5px;
+.c-1{
+    width: 94%;
+    height: 90%;
+    overflow: auto;
 }
-
+.c-2{
+    width: 90%;
+    height: 90%;
+}
+.c-3{
+    width: 91%;
+    height: 90%;
+}
+.c-4{
+    width: 90%;
+    height: 90%;
+}
 table{
     width: 100%;
 }

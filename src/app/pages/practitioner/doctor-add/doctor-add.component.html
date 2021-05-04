@@ -1,0 +1,48 @@
+<div>
+    <h2>Add Doctor</h2>
+</div>
+<h3>Doctor Information</h3>
+<mat-divider></mat-divider>
+
+<form #doctor='ngForm'>
+    <div fxLayoutGap='50px'>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput name='email' [(ngModel)]='doctor.email' placeholder="someone@mail.com" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput name='password' [(ngModel)]='doctor.password' required>
+        </mat-form-field>
+    </div>
+    <div fxLayoutGap='50px'>
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput name='fName' [(ngModel)]='doctor.fName' required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput name='lName' [(ngModel)]='doctor.lName' required>
+        </mat-form-field>
+    </div>
+    <div fxLayoutGap='50px'>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput name='title' [(ngModel)]='doctor.title' required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Paging Number</mat-label>
+            <input matInput name='paginNum' [(ngModel)]='doctor.pagingNum' required>
+        </mat-form-field>
+    </div>
+    <div fxLayoutGap='50px'>
+        <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input matInput name='patientContactNum' [(ngModel)]='doctor.patientContactNum' required>
+        </mat-form-field>
+    </div>
+    <mat-card-actions>
+        <button mat-raised-button color='primary'>Submit</button>
+        <button mat-raised-button routerLink='../doctor-list'>Cancel</button>
+    </mat-card-actions>
+</form>

@@ -1,27 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-
-export interface PeriodicElement {
-  name: string;
-  email: string;
-  gender: string;
-  time: string;
-  injury: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Hydroge', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hydrogn', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hydroen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hydrgen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hydogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hyrogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'Hdrogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'ydrogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'drogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  { name: 'rogen', email: 'something@mail.com', gender: 'Male', time: '1:38', injury: 'Pain' },
-  
-];
+import { PatientService } from 'src/app/services/patient.service';
+import { Patients } from 'src/app/models/patients';
 
 @Component({
   selector: 'app-patient-list',
@@ -30,17 +9,34 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PatientListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'email', 'gender', 'time', 'injury'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['_id', 'fName', 'middleInitial', 
+  'lName', 'email', 'password', 'dob', 'address', 'primaryPhone', 
+  'secondaryPhone', 'gender', 'ssn', 'emergencyContact', 'insurance', 'edit', 'delete'];
+  patientList = [];
+  patient = {};
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  constructor() { }
+  constructor(private patientService: PatientService) { }
 
   ngOnInit(): void {
+    this.patientService.readPatient().subscribe((res) => {this.patientList = res});
+  }
+
+  deletePatient(_id){
+    this.patientService.deletePatient(_id).subscribe((res) => {console.log(res)});
+  }
+
+  updatePatient(addPatient){
+    addPatient.value.id = this.patient['id'];
+    this.patientService.updatePatient(addPatient.value).subscribe((res) => {console.log(res);
+    });
+  }
+
+  selectPatient(patient){
+    this.patient = patient;
+  }
+
+  newPatient(){
+    this.patient = {};
   }
 
 }

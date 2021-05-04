@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
 import { HeaderComponent } from './pages/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './pages/login/login.component';
 
 //Angular Material
 import { MatDividerModule } from '@angular/material/divider';
@@ -25,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //Angular Flex-Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -32,6 +34,16 @@ import { PatientListComponent } from './pages/patient/patient-list/patient-list.
 import { AdminAddComponent } from './pages/admin/admin-add/admin-add.component';
 import { PatientAddComponent } from './pages/patient/patient-add/patient-add.component';
 import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.component';
+import { AdminListComponent } from './pages/admin/admin-list/admin-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DoctorListComponent } from './pages/practitioner/doctor-list/doctor-list.component';
+import { NurseListComponent } from './pages/practitioner/nurse-list/nurse-list.component';
+import { PractitionerHomepageComponent } from './pages/practitioner/practitioner-homepage/practitioner-homepage.component';
+import { DoctorAddComponent } from './pages/practitioner/doctor-add/doctor-add.component';
+import { NurseAddComponent } from './pages/practitioner/nurse-add/nurse-add.component';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { ClockComponent } from './pages/components/clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +56,16 @@ import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.
     PatientListComponent,
     AdminAddComponent,
     PatientAddComponent,
-    PatientHomeComponent
+    PatientHomeComponent,
+    AdminListComponent,
+    LoginComponent,
+    DoctorListComponent,
+    NurseListComponent,
+    PractitionerHomepageComponent,
+    DoctorAddComponent,
+    NurseAddComponent,
+    AdminHomeComponent,
+    ClockComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +85,10 @@ import { PatientHomeComponent } from './pages/patient/patient-home/patient-home.
     MatNativeDateModule,
     MatSelectModule,
     MatCardModule,
-    FlexLayoutModule
+    MatGridListModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
