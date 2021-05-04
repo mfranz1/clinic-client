@@ -19,8 +19,8 @@ export class PatientService {
     return this.http.post<Patients>(`${this.API_SERVER}/patients`, patient);
   }
 
-  deletePatient(id: string){
-      return this.http.delete(`${this.API_SERVER}/patients:${id}`);
+  deletePatient(_id: string){
+      return this.http.delete(`${this.API_SERVER}/patients/${_id}`);
   }
 
   updatePatient(id: string){

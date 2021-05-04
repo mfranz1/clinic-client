@@ -21,8 +21,8 @@ export class PatientListComponent implements OnInit {
     this.patientService.readPatient().subscribe((res) => {this.patientList = res});
   }
 
-  deletePatient(id){
-    this.patientService.deletePatient(id).subscribe((res) => {console.log(res)});
+  deletePatient(_id){
+    this.patientService.deletePatient(_id).subscribe((res) => {console.log(res)});
   }
 
   updatePatient(addPatient){

@@ -17,4 +17,9 @@ export class NurseListComponent implements OnInit {
     this.nurseService.readNurse().subscribe((res) => {this.nurseList = res});
   }
 
+  deleteNurse(_id){
+    this.nurseService.deleteNurse(_id).subscribe((res) => { console.log(res);
+    });
+  }
+
 }

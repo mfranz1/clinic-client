@@ -27,11 +27,11 @@ export class PractitionerService {
     return this.http.post<Nurses>(`${this.API_SERVER}/nurses`, nurse);
   }
 
-  deleteDoctor(id: number){
-    return this.http.delete(`${this.API_SERVER}/doctors:${id}`);
+  deleteDoctor(_id: number){
+    return this.http.delete(`${this.API_SERVER}/doctors/${_id}`);
   }
 
-  deleteNurse(id: number){
-    return this.http.delete(`${this.API_SERVER}/nurses:${id}`);
+  deleteNurse(_id: number){
+    return this.http.delete(`${this.API_SERVER}/nurses/${_id}`);
   }
 }

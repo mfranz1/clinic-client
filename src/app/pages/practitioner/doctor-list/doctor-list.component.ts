@@ -17,4 +17,9 @@ export class DoctorListComponent implements OnInit {
     this.doctorService.readDoctor().subscribe((res) => {this.doctorList = res});
   }
 
+  deleteDoctor(_id){
+    this.doctorService.deleteDoctor(_id).subscribe((res) => {console.log(res);
+    });
+  }
+
 }
