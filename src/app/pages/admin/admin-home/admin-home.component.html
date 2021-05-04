@@ -51,7 +51,35 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]=2 [rowspan]=1>
         <mat-card class="c-3">
-
+            <div>
+                <form>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                        <mat-form-field apperance='outline'>
+                            <mat-label>Date</mat-label>
+                            <input matInput name="date" required>
+                        </mat-form-field>
+                        <mat-form-field apperance='outline'>
+                            <mat-label>Time</mat-label>
+                            <input matInput name="time" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                        <mat-form-field apperance='outline'>
+                            <mat-label>Doctor</mat-label>
+                            <input matInput name="date" required>
+                        </mat-form-field>
+                        <mat-form-field apperance='outline'>
+                            <mat-label>Appointment Type</mat-label>
+                            <input matInput name="time" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                    </div>
+                    <mat-card-actions fxLayout='row' fxLayoutAlign='center center'>
+                        <button mat-raised-button color='primary'>Create Appointment</button>
+                    </mat-card-actions>
+                </form>
+            </div>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
