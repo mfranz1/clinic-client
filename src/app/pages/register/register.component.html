@@ -98,7 +98,7 @@
         </div>
         <div style="margin-top: 30px;margin-bottom: 0px;text-align: left;">
             <input type="text" class="textfield" style="width: 250px;" id="emailaddress" required name="emailaddress" value="Email Address" onfocus="this.value=''"/>
-            <input type="text" class="textfield" style="width: 250px;" id="password" required name="password" value="Password" onfocus="this.value=''"/>
+            <span class="bluetext">Create Password:</span><input type="password" class="textfield" style="width: 250px;" id="password" required name="password" value="Password" onfocus="this.value=''"/>
         </div>      
         <!--<div [hidden]="(emailAddress.valid) || (emailAddress.invalid && emailAddress.untouched)" class="alert alert-danger">
             Email Address is required
@@ -107,7 +107,7 @@
             Password is required
         </div>-->
         <br/><br/>
-        <button type="button" class="button" style="margin-right: 20px;border:0;">Cancel</button>
+        <button type="button" class="button" style="margin-right: 20px;border:0;" (click)="toLogin()">Cancel</button>
         <button type="submit" class="button" style="border:0;">Register</button><br/><br/>
     </form>    
 
