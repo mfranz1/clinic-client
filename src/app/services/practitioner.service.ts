@@ -10,7 +10,7 @@ export class PractitionerService {
 
   constructor(private http: HttpClient) { }
 
-  API_SERVER = 'http://localhost:3000';
+  API_SERVER = 'http://34.197.208.129:3000';
 
   readDoctor(){
     return this.http.get<Doctors[]>(`${this.API_SERVER}/doctors`);
@@ -33,5 +33,8 @@ export class PractitionerService {
 
   deleteNurse(_id: number){
     return this.http.delete(`${this.API_SERVER}/nurses/${_id}`);
+  }
+  updateNurse(_id: string){
+    return this.http.put<Nurses>(`${this.API_SERVER}/nurses/`,_id)
   }
 }

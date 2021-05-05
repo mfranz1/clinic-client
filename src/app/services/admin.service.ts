@@ -10,7 +10,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  API_SERVER = 'http://localhost:3000';
+  API_SERVER = process.env.API_URL;
 
   readAdmin(){
     return this.http.get<Admin[]>(`${this.API_SERVER}/admins`);
