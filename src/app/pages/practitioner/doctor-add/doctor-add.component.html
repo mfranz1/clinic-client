@@ -42,7 +42,7 @@
         </mat-form-field>
     </div>
     <mat-card-actions>
-        <button mat-raised-button color='primary'>Submit</button>
+        <button mat-raised-button color='primary' (click)='createDoctor(doctor.value)'>Submit</button>
         <button mat-raised-button routerLink='../doctor-list'>Cancel</button>
     </mat-card-actions>
 </form>
