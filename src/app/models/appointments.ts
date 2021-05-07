@@ -1,4 +1,5 @@
 export interface Appointments {
+   id: string
    patientID: string;
    doctorId: string;
    date: Date;

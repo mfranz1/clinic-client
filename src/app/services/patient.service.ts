@@ -9,10 +9,15 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
-  API_SERVER = 'http://34.197.208.129:3000';
+  //API_SERVER = 'http://34.197.208.129:3000';
+  API_SERVER = 'http://localhost:3000'
 
   readPatient(){
     return this.http.get<Patients[]>(`${this.API_SERVER}/patients`);
+  }
+
+  getPatient(_id){
+    return this.http.get<Patients[]>(`${this.API_SERVER}/patients/${_id}`);
   }
 
   createPatient(patient: Patients){
@@ -23,7 +28,7 @@ export class PatientService {
       return this.http.delete(`${this.API_SERVER}/patients/${_id}`);
   }
 
-  updatePatient(id: string){
-    return this.http.put<Patients>(`${this.API_SERVER}/admin`, id);
+  updatePatient(admin){
+    return this.http.put<Patients>(`${this.API_SERVER}/patients/${admin._id}`, admin);
   }
 }

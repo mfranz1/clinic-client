@@ -10,10 +10,15 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  API_SERVER = 'http://34.197.208.129:3000';
+  //API_SERVER = 'http://34.197.208.129:3000';
+  API_SERVER = 'http://localhost:3000';
 
   readAdmin(){
     return this.http.get<Admin[]>(`${this.API_SERVER}/admins`);
+  }
+
+  getAdmin(_id){
+    return this.http.get<Admin[]>(`${this.API_SERVER}/admins/${_id}`);
   }
 
   createAdmin(admin: Admin){
@@ -24,9 +29,7 @@ export class AdminService {
     return this.http.delete(`${this.API_SERVER}/admins/${_id}`);
   }
 
-  updateAdmin(id: string){
-    return this.http.put<Admin>(`${this.API_SERVER}/admin`, id);
+  updateAdmin(admin){
+    return this.http.put<Admin>(`${this.API_SERVER}/admins/${admin._id}`, admin);
   }
-
-
 }

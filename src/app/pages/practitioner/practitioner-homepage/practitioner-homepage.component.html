@@ -5,7 +5,7 @@
                 <mat-card-title>Appointments</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <table mat-table [dataSource]='patientAppointments' class="mat-elevation-z8">
+                <table mat-table [dataSource]='doctorAppointments' class="mat-elevation-z8">
 
                     <ng-container matColumnDef="date">
                         <th mat-header-cell *matHeaderCellDef> Date </th>
@@ -24,18 +24,9 @@
                         <td mat-cell *matCellDef="let element"> {{element.patientID}} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="addNote">
-                        <th mat-header-cell *matHeaderCellDef> NOTE </th>
-                        <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button color='seconday'>ADD NOTE</button>
-                        </td>
-                    </ng-container>
-
-                    <ng-container matColumnDef="vitals">
-                        <th mat-header-cell *matHeaderCellDef> Vitals </th>
-                        <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button color='seconday'>Vitals</button>
-                        </td>
+                    <ng-container matColumnDef="type">
+                        <th mat-header-cell *matHeaderCellDef> Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -49,7 +40,62 @@
             <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]=6 [rowspan]=1>
-        <img src="https://certification.osteopathic.org/internal-medicine/wp-content/uploads/sites/13/2017/02/banner.png">
+    <mat-grid-tile [colspan]=6 [rowspan]=4>
+        <mat-card class="c-3">
+            <mat-card-header>
+                <mat-card-title>Notes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]='notesData' class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="_id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="note">
+                        <th mat-header-cell *matHeaderCellDef> Note </th>
+                        <td mat-cell *matCellDef="let element"> {{element.note}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef> Select </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-raised-button color='accent' (click)='selectNote(element._id)'>Select</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                </table>
+            </mat-card-content>
+            <div>
+                <mat-divider></mat-divider>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Note</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <form #noteU="ngForm" class="mat-elevation-z8" style="width: 100%; padding: 5px;">
+
+                            <mat-form-field class='noteID'>
+                                <input matInput placeholder="ID" name="_id" [ngModel]="note?._id"
+                                    (ngModelChange)='note._id' required>
+                            </mat-form-field>
+
+                            <mat-form-field fxFill>
+                                <input matInput placeholder="Note" name="note" [ngModel]="note?.note"
+                                    (ngModelChange)='note.note' required>
+                            </mat-form-field>
+                        </form>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button (click)="updateNote(noteU.value)" color="primary">Save</button>
+                        <button mat-raised-button (click)='newNote(noteU.value)' color='primary'>New</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

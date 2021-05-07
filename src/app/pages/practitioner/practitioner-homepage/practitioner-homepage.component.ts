@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import { PractitionerService } from 'src/app/services/practitioner.service';
 
 export interface PeriodicElement {
   date: string;
@@ -23,12 +25,29 @@ export class PractitionerHomepageComponent implements OnInit {
     this.selectedDate= event;
   }
 
-  displayedColumns: string[] = ['date', 'time', 'patientID', 'addNote', 'vitals'];
-  patientAppointments = ELEMENT_DATA;
+  displayedColumns: string[] = ['date', 'time', 'patientID', 'type'];
+  displayedColumns2: string[] = ['_id', 'note', 'select'];
+  doctorAppointments= [] as any;
+  notesData = [];
+  note = [] as any;
 
-  constructor() { }
+  constructor(private practitionerService: PractitionerService) { }
 
   ngOnInit(): void {
+    this.practitionerService.readNotes().subscribe((res) => { this.notesData = res});
+    this.practitionerService.getAppointments().subscribe((res) => { this.doctorAppointments = res });
+  }
+
+  selectNote(_id){
+    this.practitionerService.getNote(_id).subscribe((res) => { this.note = res });
+  }
+
+  updateNote(noteU){
+    this.practitionerService.updateNote(noteU).subscribe((res) => { console.log(res), alert('Note Updated')});
+  }
+
+  newNote(noteN){
+    this.practitionerService.addNote(noteN).subscribe((res) => { console.log(res), alert('New Note Created') });
   }
 
 }

@@ -27,7 +27,7 @@
                     <ng-container matColumnDef="cancel">
                         <th mat-header-cell *matHeaderCellDef> Cancel Appointment </th>
                         <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button color='warn'>cancel</button>
+                            <button mat-raised-button color='warn' (click)='cancelAppointment(element._id)'>cancel</button>
                         </td>
                     </ng-container>
 

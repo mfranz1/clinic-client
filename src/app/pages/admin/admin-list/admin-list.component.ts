@@ -8,26 +8,29 @@ import { AdminService } from '../../../services/admin.service';
 })
 export class AdminListComponent implements OnInit {
 
-  //id, email, password, adminPin, fName, lName
   displayedColumns: string[] = ['_id', 'fName', 'lName', 'email', 'adminPin', 'password', 'edit', 'delete'];
   adminList = [];
-  
+  admin = [] as any;
+
 
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.adminService.readAdmin().subscribe((res) => {this.adminList = res});
+    this.adminService.readAdmin().subscribe((res) => { this.adminList = res });
   }
 
-  deleteAdmin(_id){
-    this.adminService.deleteAdmin(_id).subscribe((res) => {console.log(res)});
+  deleteAdmin(_id) {
+    this.adminService.deleteAdmin(_id).subscribe((res) => { console.log(res), alert('Admin User Deleted') });
   }
-/*
-  updateAdmin(addAdmin){
-    addAdmin.value.id = this.admin['id'];
-    this.adminService.updateAdmin(addAdmin.value).subscribe((res) => {console.log(res);
+
+  updateAdmin(adminU) {
+    this.adminService.updateAdmin(adminU).subscribe((res) => {
+      console.log(res), alert('Admin User Updated');
     });
   }
-*/
+
+  selectAdmin(_id) {
+    this.adminService.getAdmin(_id).subscribe((res) => { this.admin = res });
+  }
 
 }

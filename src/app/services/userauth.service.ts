@@ -23,7 +23,8 @@ export class UserAuthService {
     return this._user;
   };
 
-  API_SERVER = 'http://34.197.208.129:3000';
+  //API_SERVER = 'http://34.197.208.129:3000';
+  API_SERVER = 'http://localhost:3000';
 
   authenticateUser(email: string, password: string): Promise<LoggedIn> {
     let params = {email, password}

@@ -12,7 +12,7 @@ export class DoctorAddComponent implements OnInit {
 
 
   createDoctor(doctor: any){
-    this.doctorService.createDoctor(doctor).subscribe((res) => {console.log(res)});
+    this.doctorService.createDoctor(doctor).subscribe((res) => {console.log(res), alert('New Doctor User Created')});
   }
 
   ngOnInit(): void {

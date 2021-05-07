@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PractitionerService } from '../../../services/practitioner.service'
-import { Nurses } from 'src/app/models/nurses';
+import { PractitionerService } from '../../../services/practitioner.service';
 
 @Component({
   selector: 'app-nurse-list',
@@ -11,7 +10,7 @@ export class NurseListComponent implements OnInit {
 
   displayedColumns: string[] = ['_id', 'fName', 'lName', 'email', 'edit', 'delete'];
   nurseList = [];
-  nurse = {}
+  nurse = [] as any;
 
   constructor(private nurseService: PractitionerService) { }
 
@@ -20,23 +19,18 @@ export class NurseListComponent implements OnInit {
   }
 
   deleteNurse(_id){
-    this.nurseService.deleteNurse(_id).subscribe((res) => { console.log(res);
+    this.nurseService.deleteNurse(_id).subscribe((res) => { console.log(res), alert('Nurse Deleted')
     });
   }
 
   updateNurse(nurseU){
-    nurseU.value._id = this.nurse['_id'];
-    this.nurseService.updateNurse(nurseU.value).subscribe((res) => {
-      console.log(res);
+    this.nurseService.updateNurse(nurseU).subscribe((res) => {
+      console.log(res), alert('Nurse Updated')
     })
   }
 
-  selectNurse(nurse){
-    this.nurse = nurse;
-  }
-
-  newNurse(){
-    this.nurse = [];
+  selectNurse(_id){
+    this.nurseService.getNurse(_id).subscribe((res) => {this.nurse = res});
   }
 
 }

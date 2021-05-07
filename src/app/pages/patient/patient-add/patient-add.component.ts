@@ -12,7 +12,7 @@ export class PatientAddComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   createPatient(patient: Patients){
-    this.patientService.createPatient(patient).subscribe((res) => { console.log(res)});
+    this.patientService.createPatient(patient).subscribe((res) => { console.log(res), alert('New Patient User Created')});
   }
 
   ngOnInit(): void {

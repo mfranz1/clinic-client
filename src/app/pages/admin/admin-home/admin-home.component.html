@@ -7,6 +7,11 @@
             <mat-card-content>
                 <table mat-table [dataSource]='appointments' class="mat-elevation-z8">
 
+                    <ng-container matColumnDef="_id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+                    </ng-container>
+
                     <ng-container matColumnDef="date">
                         <th mat-header-cell *matHeaderCellDef> Date </th>
                         <td mat-cell *matCellDef="let element"> {{element.date}} </td>
@@ -24,17 +29,11 @@
                         <td mat-cell *matCellDef="let element"> {{element.doctorID}} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="note">
-                        <th mat-header-cell *matHeaderCellDef> Note </th>
-                        <td mat-cell *matCellDef="let element"> 
-                            <button mat-raised-button color="primary">Add Note</button>    
-                        </td>
-                    </ng-container>
-
                     <ng-container matColumnDef="action">
                         <th mat-header-cell *matHeaderCellDef> Cancel Appointment </th>
                         <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button color='warn'>Cancel</button>
+                            <button mat-raised-button color='warn'
+                                (click)='cancelAppointment(element._id)'>Cancel</button>
                         </td>
                     </ng-container>
 
@@ -52,32 +51,47 @@
     <mat-grid-tile [colspan]=2 [rowspan]=1>
         <mat-card class="c-3">
             <div>
-                <form>
+                <form #appointment='ngForm'>
                     <div fxLayout="row" fxLayoutAlign="space-evenly center">
-                        <mat-form-field apperance='outline'>
+                        <mat-form-field appearance='outline'>
                             <mat-label>Date</mat-label>
-                            <input matInput name="date" required>
+                            <input matInput name="date" [(ngModel)]='appointment.date' required>
                         </mat-form-field>
-                        <mat-form-field apperance='outline'>
+                        <mat-form-field appearance='outline'>
                             <mat-label>Time</mat-label>
-                            <input matInput name="time" required>
+                            <input matInput name="time" [(ngModel)]='appointment.time' required>
                         </mat-form-field>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="space-evenly center">
-                        <mat-form-field apperance='outline'>
+
+                        <mat-form-field appearance="outline">
                             <mat-label>Doctor</mat-label>
-                            <input matInput name="date" required>
-                        </mat-form-field>
-                        <mat-form-field apperance='outline'>
+                            <mat-select name='doctorID' [(ngModel)]="appointment.doctorID">
+                              <mat-option value="60910ef0f12de43f288a15c5">60910ef0f12de43f288a15c5</mat-option>
+                              <mat-option value="60930c8ba20c2ddc95d2eaa2">60930c8ba20c2ddc95d2eaa2</mat-option>
+                              <mat-option value="6093115ca3b8e5285d1bd2de">6093115ca3b8e5285d1bd2de</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                        <mat-form-field appearance='outline'>
                             <mat-label>Appointment Type</mat-label>
-                            <input matInput name="time" required>
+                            <input matInput name="type" [(ngModel)]='appointment.type' required>
                         </mat-form-field>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="space-evenly center">
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Patient</mat-label>
+                            <mat-select name='patientID' [(ngModel)]="appointment.patientID">
+                              <mat-option value="608892b0d364195d804f3c0d">608892b0d364195d804f3c0d</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <mat-card-actions fxLayout='row' fxLayoutAlign='center center'>
+                            <button mat-raised-button color='primary' (click)='createAppointment(appointment.value)'>Create Appointment</button>
+                        </mat-card-actions>
+                        
                     </div>
-                    <mat-card-actions fxLayout='row' fxLayoutAlign='center center'>
-                        <button mat-raised-button color='primary'>Create Appointment</button>
-                    </mat-card-actions>
                 </form>
             </div>
         </mat-card>

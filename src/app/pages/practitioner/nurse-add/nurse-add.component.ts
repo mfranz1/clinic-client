@@ -14,7 +14,7 @@ export class NurseAddComponent implements OnInit {
   constructor(private nurseService: PractitionerService) { }
 
   createNurse(nurse: Nurses){
-    this.nurseService.createNurse(nurse).subscribe((res) => { console.log(res)});
+    this.nurseService.createNurse(nurse).subscribe((res) => { console.log(res), alert('New Nurse User Created')});
   }
 
   ngOnInit(): void {

@@ -13,7 +13,7 @@ export class PatientListComponent implements OnInit {
   'lName', 'email', 'password', 'dob', 'address', 'primaryPhone', 
   'secondaryPhone', 'gender', 'ssn', 'emergencyContact', 'insurance', 'edit', 'delete'];
   patientList = [];
-  patient = {};
+  patient = [] as any;
 
   constructor(private patientService: PatientService) { }
 
@@ -22,21 +22,16 @@ export class PatientListComponent implements OnInit {
   }
 
   deletePatient(_id){
-    this.patientService.deletePatient(_id).subscribe((res) => {console.log(res)});
+    this.patientService.deletePatient(_id).subscribe((res) => {console.log(res), alert('Patient Deleted')});
   }
 
-  updatePatient(addPatient){
-    addPatient.value.id = this.patient['id'];
-    this.patientService.updatePatient(addPatient.value).subscribe((res) => {console.log(res);
+  updatePatient(adminU){
+    this.patientService.updatePatient(adminU).subscribe((res) => {console.log(res), alert('Patient Updated')
     });
   }
 
-  selectPatient(patient){
-    this.patient = patient;
-  }
-
-  newPatient(){
-    this.patient = {};
+  selectPatient(_id){
+    this.patientService.getPatient(_id).subscribe((res) => {this.patient = res});
   }
 
 }
