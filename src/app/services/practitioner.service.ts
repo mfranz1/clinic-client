@@ -12,8 +12,8 @@ export class PractitionerService {
 
   constructor(private http: HttpClient) { }
 
-  //API_SERVER = 'http://34.197.208.129:3000';
-  API_SERVER = 'http://localhost:3000'
+  API_SERVER = 'http://34.197.208.129:3000';
+  //API_SERVER = 'http://localhost:3000'
 
   readDoctor(){
     return this.http.get<Doctors[]>(`${this.API_SERVER}/doctors`);

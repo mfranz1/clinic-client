@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   
   onSubmit() { 
     this.submitted = true;
-    alert("form submitted ");
   }
 
   authenticate(){

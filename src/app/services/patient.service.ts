@@ -9,8 +9,8 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
-  //API_SERVER = 'http://34.197.208.129:3000';
-  API_SERVER = 'http://localhost:3000'
+  API_SERVER = 'http://34.197.208.129:3000';
+  //API_SERVER = 'http://localhost:3000'
 
   readPatient(){
     return this.http.get<Patients[]>(`${this.API_SERVER}/patients`);
